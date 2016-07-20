@@ -5,6 +5,12 @@
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
 
+<<<<<<< HEAD
+=======
+
+    <!--TESTING THE GIT-->
+     <!--TESTING THE GIT 2###########################################3-->
+>>>>>>> f292bd7c138259749772b0096b856c1925b1ee8f
     
     <application
         android:allowBackup="true"
