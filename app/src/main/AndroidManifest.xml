@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.divyanshu.acadgildprojbatch3">
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme_my">
+        <activity android:name=".MainActivity">
+        </activity>
+        <activity android:name=".LoginScreen"></activity>
+        <activity android:name=".Activity2"></activity>
+        <activity android:name=".CheckboxExample">
+
+        </activity>
+        <activity android:name=".SpinnerExample">
+
+        </activity>
+        <activity android:name=".ListViewExample">
+
+        </activity>
+        <activity android:name=".LiistView2">
+
+        </activity>
+        <activity android:name=".DatePickerExample">
+           </activity>
+        <activity android:name=".TimePickerExample">
+
+
+        </activity>
+
+        <activity android:name=".Batch5.ExplicitIntentActivityA">
+
+
+        </activity>
+
+        <activity android:name=".Batch5.ExplicitIntentActivityB"></activity>
+
+        <activity android:name=".Batch6.OptionMenuExample">
+
+        </activity>
+
+        <activity android:name=".Batch6.ContextMenuExample">
+
+        </activity>
+        <activity android:name=".Batch6.PopupMenuExample">
+
+        </activity>
+        <activity android:name=".Sqlite.AndroidSqliteTutorialActivity">
+
+        </activity>
+        <activity android:name=".SharedPrefrences.Activity_SharedPrefrences">
+
+        </activity>
+        <activity android:name=".SharedPrefrences.SettingActivity"></activity>
+        <activity android:name=".AsyncTask.AsysnTask">
+
+        </activity>
+        <activity android:name=".Dialog.DialogActivity">
+
+        </activity>
+        <activity android:name=".Dialog.CustomDialog"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

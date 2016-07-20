@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+   >
+<item android:id="@+id/item1"
+    android:icon="@drawable/ic_add_calendar"
+    android:title="Addition"
+    app:showAsAction="always">
+    <menu>
+
+        <item
+            android:id="@+id/menu_logout"
+            android:icon="@drawable/ic_add_calendar"
+            android:title="logout"/>
+        <item android:id="@+id/item2"
+            android:icon="@drawable/fab_police"
+            android:title="DELETE"></item>
+
+        <item android:id="@+id/item3"
+            android:icon="@drawable/food"
+            android:title="Send Email"></item>
+    </menu>
+</item>
+    <!--<item android:id="@+id/item2"-->
+        <!--android:icon="@drawable/fab_police"-->
+        <!--android:title="DELETE"></item>-->
+
+    <!--<item android:id="@+id/item3"-->
+        <!--android:icon="@drawable/food"-->
+        <!--android:title="Send Email"></item>-->
+</menu>

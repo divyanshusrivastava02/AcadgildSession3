@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Acadgild batch preference">
+
+        <CheckBoxPreference
+            android:key="cbp_checkbox_preference1"
+            android:title="check box 1"/>
+        <CheckBoxPreference
+            android:key="cbp_checkbox_preference2"
+            android:title="Check box 2"></CheckBoxPreference>
+        <EditTextPreference
+            android:key="etp_preference1_title"
+            android:title="Edit text value"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Second Category">
+
+<ListPreference
+    android:key="lp_list_preferences"
+    android:title="List Preferences Title"
+    android:entries="@array/spinner_values"
+    android:entryValues="@array/entries_value"/>
+
+        <RingtonePreference
+            android:key="rtp_ringtone_preference"
+            android:title="Ringtone Ding dong"/>
+
+    </PreferenceCategory>
+
+    <PreferenceScreen
+        android:title="New Screen"
+        >
+
+        <PreferenceCategory
+            android:title="str_third_category_title">
+            <EditTextPreference
+                android:key="etp_edittext_preference2"
+                android:title="Its a new string"></EditTextPreference>
+        </PreferenceCategory>
+    </PreferenceScreen>
+
+</PreferenceScreen>

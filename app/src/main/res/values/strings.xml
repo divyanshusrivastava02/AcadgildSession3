@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">AcadgildProjBatch3</string>
+    <string name="welcome">welcome to acadgild hello I am english</string>
+
+    <string-array name="spinner_values">
+        <item>TShirt</item>
+        <item>TV</item>
+        <item>Mobile</item>
+        <item>Shoes</item>
+        <item>Cars</item>
+    </string-array>
+
+    <string-array name="entries_value">
+        <item>TShirt value</item>
+        <item>TV value</item>
+        <item>Mobil valuee</item>
+        <item>Shoes value</item>
+        <item>Cars value</item>
+    </string-array>
+</resources>
