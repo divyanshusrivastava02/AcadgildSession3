@@ -1,6 +1,8 @@
 package com.divyanshu.acadgildprojbatch3.ContentProviderExample;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.graphics.Bitmap;
@@ -9,22 +11,30 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.divyanshu.acadgildprojbatch3.R;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Divyanshu on 27-07-2016.
  */
-public class ContentProviderExmp extends Activity{
+public class ContentProviderExmp extends Activity implements ActivityCompat.OnRequestPermissionsResultCallback{
 
     android.support.v4.widget.SimpleCursorAdapter mAdapter;
     MatrixCursor mMatrixCursor;
-
+    final private int REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS = 124;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,9 +49,9 @@ public class ContentProviderExmp extends Activity{
 
         ListView listContacts = (ListView)findViewById(R.id.list_contacts);
         listContacts.setAdapter(mAdapter);
-
-        ListViewContactsLoader listViewContactsLoader = new ListViewContactsLoader();
-        listViewContactsLoader.execute();
+        askForPermissions();
+//        ListViewContactsLoader listViewContactsLoader = new ListViewContactsLoader();
+//        listViewContactsLoader.execute();
     }
 
 
@@ -165,5 +175,87 @@ public class ContentProviderExmp extends Activity{
             mAdapter.swapCursor(result);
         }
     }
+
+    private void askForPermissions() {
+        List<String> permissionsNeeded = new ArrayList<String>();
+
+        final List<String> permissionsList = new ArrayList<String>();
+        if (!addPermission(permissionsList, Manifest.permission.READ_CONTACTS))
+            permissionsNeeded.add("READ_CONTACTS");
+        if (!addPermission(permissionsList, Manifest.permission.WRITE_EXTERNAL_STORAGE))
+            permissionsNeeded.add("WRITE_EXTERNAL_STORAGE");
+
+        if (permissionsList.size() > 0) {
+            if (permissionsNeeded.size() > 0) {
+                // Need Rationale
+                String message = "You need to grant access to " + permissionsNeeded.get(0);
+                for (int i = 1; i < permissionsNeeded.size(); i++)
+                    message = message + ", " + permissionsNeeded.get(i);
+                requestPermissions(permissionsList.toArray(new String[permissionsList.size()]),
+                        REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS);
+//                showMessageOKCancel(message,
+//                        new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                requestPermissions(permissionsList.toArray(new String[permissionsList.size()]),
+//                                        REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS);
+//                            }
+//                        });
+                return;
+            }
+            requestPermissions(permissionsList.toArray(new String[permissionsList.size()]),
+                    REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS);
+            return;
+        }
+
+        ListViewContactsLoader listViewContactsLoader = new ListViewContactsLoader();
+        listViewContactsLoader.execute();
+    }
+
+    private boolean addPermission(List<String> permissionsList, String permission) {
+        if (ContextCompat.checkSelfPermission(ContentProviderExmp.this, permission) != PackageManager.PERMISSION_GRANTED) {
+            permissionsList.add(permission);
+            // Check for Rationale Option
+            if (!shouldShowRequestPermissionRationale(permission))
+                return false;
+        }
+        return true;
+    }
+
+    /**
+     * Callback received when a permissions request has been completed.
+     */
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+
+//
+
+        if (requestCode == REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS) {
+            Map<String, Integer> perms = new HashMap<String, Integer>();
+            // Initial
+            perms.put(Manifest.permission.READ_CONTACTS, PackageManager.PERMISSION_GRANTED);
+            perms.put(Manifest.permission.WRITE_EXTERNAL_STORAGE, PackageManager.PERMISSION_GRANTED);
+            // Fill with results
+            for (int i = 0; i < permissions.length; i++)
+                perms.put(permissions[i], grantResults[i]);
+            // Check for ACCESS_FINE_LOCATION
+            if (perms.get(Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED
+                    && perms.get(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                // All Permissions Granted
+                ListViewContactsLoader listViewContactsLoader = new ListViewContactsLoader();
+                listViewContactsLoader.execute();
+            } else {
+                // Permission Denied
+                Toast.makeText(ContentProviderExmp.this, "Some Permission is Denied", Toast.LENGTH_SHORT)
+                        .show();
+            }
+        } else {
+            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+    }
+
+
+
 
 }
