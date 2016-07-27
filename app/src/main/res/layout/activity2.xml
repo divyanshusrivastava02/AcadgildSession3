@@ -4,11 +4,85 @@
     android:layout_height="match_parent">
 
     <TextView
+
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="WELCOME Acadgild"
         android:textSize="30sp"
         android:textColor="#556789"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:gravity="center_vertical|center_horizontal"/>
+        android:onClick="clickCalled"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dip"/>
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:text="question"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/answerTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:text="Answer"
+        android:padding="10dip"
+        android:textColor="#ffffff"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/optionA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:text="optionA"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/optionB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:text="optionB"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:id="@+id/optionC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:text="optionC"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/optionD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:text="optionD"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dip"
+        android:text="SCORE"
+        android:layout_gravity="center_horizontal"
+        android:textSize="32sp"
+        />
+
 </LinearLayout>

@@ -5,13 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
 
-<<<<<<< HEAD
-=======
-
-    <!--TESTING THE GIT-->
-     <!--TESTING THE GIT 2###########################################3-->
->>>>>>> f292bd7c138259749772b0096b856c1925b1ee8f
-    
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,7 +14,9 @@
         <activity android:name=".MainActivity">
         </activity>
         <activity android:name=".LoginScreen"></activity>
-        <activity android:name=".Activity2"></activity>
+        <activity android:name=".Activity2">
+
+        </activity>
         <activity android:name=".CheckboxExample">
 
         </activity>
@@ -73,6 +68,28 @@
         </activity>
         <activity android:name=".Dialog.CustomDialog"
             >
+        </activity>
+
+        <activity android:name=".FragmentsExmp.FragmentLayout">
+
+        </activity>
+        <activity android:name=".FragmentsExmp.DetailsActivity">
+
+        </activity>
+        <activity android:name=".ActionBar.ActionBarExample">
+
+        </activity>
+        <activity android:name=".ActionBar.ActionBarCustom">
+
+        </activity>
+        <activity android:name=".ViewPagerAcadgild.ViewPagerExmp">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ContentProviderExample.ContentProviderExmp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

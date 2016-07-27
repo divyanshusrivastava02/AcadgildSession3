@@ -2,6 +2,7 @@
     <string name="app_name">AcadgildProjBatch3</string>
     <string name="welcome">welcome to acadgild hello I am english</string>
 
+    <string name="acadgild">Welcome click</string>
     <string-array name="spinner_values">
         <item>TShirt</item>
         <item>TV</item>

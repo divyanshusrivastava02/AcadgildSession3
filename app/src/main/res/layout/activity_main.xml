@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dip"
-    android:background="@drawable/food"
     tools:context="com.divyanshu.acadgildprojbatch3.MainActivity">
 
 
@@ -27,7 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dip"
         android:padding="10dip"
-        android:text="SUBMIT"/>
+        android:background="@color/red"
+        android:text="@string/acadgild"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -54,6 +54,32 @@
         android:layout_height="wrap_content"
         android:text="New Switch"
         android:id="@+id/switch1"
+        android:layout_gravity="center_horizontal" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New RadioButton"
+        android:id="@+id/radioButton2"
+        android:layout_gravity="center_horizontal" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Switch"
+        android:id="@+id/switch2"
+        android:layout_gravity="center_horizontal" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_gravity="center_horizontal" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
         android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
