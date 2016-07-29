@@ -56,6 +56,7 @@ public class AsysnTask extends Activity {
                 sleep();
                 publishProgress(i*10);
             }
+
             return  tmp;
         }
 

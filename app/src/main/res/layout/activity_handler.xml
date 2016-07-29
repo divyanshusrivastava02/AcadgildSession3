@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="centerInside"/>
+
+
+    <Button
+        android:id="@+id/loadbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOAD BUTTON"
+        android:layout_marginTop="20dip"
+        android:layout_gravity="center_horizontal"
+        android:textSize="24sp"/>
+
+    <ProgressBar
+        android:id="@+id/progressbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:maxHeight="5dip"
+        android:minWidth="5dip"
+        android:visibility="invisible"/>
+</LinearLayout>

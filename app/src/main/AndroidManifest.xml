@@ -87,6 +87,9 @@
         <activity android:name=".ViewPagerAcadgild.ViewPagerExmp">
         </activity>
         <activity android:name=".ContentProviderExample.ContentProviderExmp">
+
+        </activity>
+        <activity android:name=".Handler.HandlerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
