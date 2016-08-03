@@ -93,11 +93,7 @@
 
         </activity>
         <activity android:name=".BroadcastReceiverClass.RegisterUnregister">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".BroadcastReceiverClass.NotificationMessage"></activity>
         <receiver android:name=".BroadcastReceiverClass.MyBroadcastReceiver">
@@ -105,6 +101,21 @@
                 <action android:name="android.intent.action.TIME_SET"></action>
             </intent-filter>
         </receiver>
+
+
+        <activity android:name=".ServicesClass.UnBindServices.UnBoundServiceExample">
+
+        </activity>
+        <service android:name=".ServicesClass.UnBindServices.MyUnBoundServices"></service>
+
+        <activity android:name=".ServicesClass.BoundServiceActivity.BoundServiceExample">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name=".ServicesClass.BoundServiceActivity.BoundService"></service>
     </application>
 
 </manifest>
