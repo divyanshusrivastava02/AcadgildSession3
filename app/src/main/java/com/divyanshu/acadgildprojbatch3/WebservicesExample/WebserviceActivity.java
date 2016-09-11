@@ -8,7 +8,10 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.divyanshu.acadgildprojbatch3.GsonExmp.GsonPOJO;
 import com.divyanshu.acadgildprojbatch3.R;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -66,6 +69,11 @@ public class WebserviceActivity extends ListActivity {
 
             String jsonStr = sh.makeServiceCall(url,ServiceHandler.GET);
             System.out.println("Response   : "+jsonStr);
+
+            Gson gson = new GsonBuilder().create();
+            GsonPOJO schema = gson.fromJson(jsonStr, GsonPOJO.class);
+
+           // String one = schema.
 
             try{
                 if(jsonStr!=null){

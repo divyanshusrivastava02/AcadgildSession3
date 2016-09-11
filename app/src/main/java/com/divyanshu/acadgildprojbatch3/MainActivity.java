@@ -1,12 +1,15 @@
 package com.divyanshu.acadgildprojbatch3;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.divyanshu.acadgildprojbatch3.GsonExmp.Parser_getGsonExmp;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toast.makeText(MainActivity.this,"onCreate Called",Toast.LENGTH_SHORT).show();
 
+        new fetchGSONExmpAsyncTask().execute();
         btn_submit =(Button)findViewById(R.id.btn_submit);
 //        btn_submit.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -79,5 +83,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Toast.makeText(MainActivity.this,"onDestroy Called",Toast.LENGTH_SHORT).show();
+    }
+
+
+
+
+
+    class fetchGSONExmpAsyncTask extends AsyncTask<String, Void, String> {
+
+        private Exception exception;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+        }
+
+        protected String doInBackground(String... urls) {
+            try {
+                Parser_getGsonExmp getTruckList = new Parser_getGsonExmp(MainActivity.this);
+                return "";
+            } catch (Exception e) {
+                this.exception = e;
+                return null;
+            }
+        }
     }
 }
